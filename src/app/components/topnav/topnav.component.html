@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md navbar-light d-none d-md-flex" id="topbar">
+    <div class="container-fluid">
+      
+      <div class="navbar-brand-container">
+        <a class="navbar-brand" [routerLink]="['/clientes']" style="margin-left: 46rem;">
+          <img src="./assets/img/Infinity5.png" class="navbar-brand-img mx-auto" style="max-height: 2rem !important;" alt="Logo">
+        </a>
+      </div>
+  
+      <!-- User -->
+      <div class="navbar-user" style="margin-right: 17px;">
+  
+        <!-- Dropdown -->
+ 
+  
+        <!-- Dropdown -->
+        <div class="dropdown">
+  
+          <!-- Toggle -->
+          <a class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="..." class="avatar-img rounded-circle" />
+          </a>
+  
+          <!-- Menu -->
+          <div class="dropdown-menu dropdown-menu-right">
+      
+            <a class="dropdown-item" style="cursor:pointer" (click)="logout()">
+              <span class="fe fe-log-out me-4"></span> Cerrar sesión
+            </a>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  </nav>
+  

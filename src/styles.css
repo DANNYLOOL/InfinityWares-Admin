@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    display: none;
+  }
+  .iziToast-danger{
+  color: #ff5252;
+  border: 1px solid;
+  border-color: rgba(255,82,82,0.5);
+  background: white !important;
+}
+.iziToast-danger .iziToast-title{
+  color: #ff5252 !important;
+}
+
+.iziToast-danger .iziToast-message{
+  color: #ff5252 !important;
+}
+.iziToast-primary{
+  color: #ac32e4;
+  border: 1px solid;
+  border-color: rgba(172,50,228,0.5);
+  background: white !important;
+}
+.iziToast-primary .iziToast-title{
+  color: #ac32e4 !important;
+}
+
+.iziToast-primary .iziToast-message{
+  color: #ac32e4 !important;
+}
+.iziToast-success{
+  color: #33cb81;
+  border: 1px solid;
+  border-color: rgba(51,203,129,0.5);
+  background: white !important;
+}
+.iziToast-success .iziToast-title{
+  color: #33cb81 !important;
+}
+
+.iziToast-success .iziToast-message{
+  color: #33cb81 !important;
+}
+.iziToast-warning{
+  color: #fc8c3a;
+  border: 1px solid;
+  border-color: rgba(252,140,58,0.5);
+  background: white !important;
+}
+.iziToast-warning .iziToast-title{
+  color: #fc8c3a !important;
+}
+
+.iziToast-warning .iziToast-message{
+  color: #fc8c3a !important;
+}
+.iziToast-info{
+  color: #5695fe;
+  border: 1px solid;
+  border-color: rgba(86,149,254,0.5);
+  background: white !important;
+}
+.iziToast-info .iziToast-title{
+  color: #5695fe !important;
+}
+
+.iziToast-info .iziToast-message{
+  color: #5695fe !important;
+}
+.iziToast-accent{
+  color: #e833b0;
+  border: 1px solid;
+  border-color: rgba(232,51,176,0.5);
+  background: white !important;
+}
+.iziToast-accent .iziToast-title{
+  color: #e833b0 !important;
+}
+
+.iziToast-accent .iziToast-message{
+  color: #e833b0 !important;
+}
+
+@media (min-width: 768px){
+  .main-content {
+      margin-left: 250px !important;
+  }
+
+}
