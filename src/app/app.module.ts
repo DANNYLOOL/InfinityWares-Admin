@@ -20,6 +20,7 @@ import { VariedadesProductoComponent } from './components/productos/variedades-p
 import { InventarioProductoComponent } from './components/productos/inventario-producto/inventario-producto.component';
 import { GaleriaProductoComponent } from './components/productos/galeria-producto/galeria-producto.component';
 import { IndexAdminsComponent } from './components/admins/index-admins/index-admins.component';
+import { CreateAdminsComponent } from './components/admins/create-admins/create-admins.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { IndexAdminsComponent } from './components/admins/index-admins/index-adm
     VariedadesProductoComponent,
     InventarioProductoComponent,
     GaleriaProductoComponent,
-    IndexAdminsComponent
+    IndexAdminsComponent,
+    CreateAdminsComponent
   ],
   imports: [
     BrowserModule,

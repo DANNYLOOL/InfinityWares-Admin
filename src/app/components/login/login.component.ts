@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     $('body').addClass('align-items-center');
     if(this.token){
-      this._router.navigate(['/clientes']);
+      this._router.navigate(['/admins']);
     }else{
       //MANTENER EN EL COMPONENTE
     }
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('token',response.token);
               localStorage.setItem('identity',response.data._id);
               localStorage.setItem('user_data',JSON.stringify(response.data));
-              this._router.navigate(['/clientes']);
+              this._router.navigate(['/admins']);
             }else{
               iziToast.show({
                   title: 'ERROR USER',

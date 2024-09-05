@@ -40,13 +40,21 @@
 
           </div>
           <div class="card-body">
-            <div class="input-group input-group-merge">
-              <input type="text" class="form-control form-control-appended" placeholder="Buscar admin" name="filtro"
-                [(ngModel)]="filtro" (keyup.enter)="filtrar_admin()">
-              <div class="input-group-append">
-                <button class="btn btn-primary" (click)="filtrar_admin()">
-                  Buscar
-                </button>
+            <div class="row">
+              <div class="col">
+                <div class="input-group input-group-merge">
+                  <input type="text" class="form-control form-control-appended" placeholder="Buscar admin" name="filtro"
+                    [(ngModel)]="filtro" (keyup.enter)="filtrar_admin()">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" (click)="filtrar_admin()">
+                      Buscar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <a class="btn btn-primary" [routerLink]="['/productos/create']" routerLinkActive="router-link-active"
+                  style="cursor: pointer;">Nuevo admin</a>
               </div>
             </div>
           </div>
@@ -73,19 +81,23 @@
                   </td>
                   <td>
                     <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonAlias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonAlias"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Opciones
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonAlias">
                         <li *ngIf="!item.activo">
-                          <a class="dropdown-item" style="cursor: pointer;" data-toggle="modal" [attr.data-target]="'#enable-'+item._id">Habilitar</a>
+                          <a class="dropdown-item" style="cursor: pointer;" data-toggle="modal"
+                            [attr.data-target]="'#enable-'+item._id">Habilitar</a>
                         </li>
                         <li *ngIf="item.activo">
-                          <a class="dropdown-item" style="cursor: pointer;" data-toggle="modal" [attr.data-target]="'#delete-'+item._id">Inhabilitar</a>
+                          <a class="dropdown-item" style="cursor: pointer;" data-toggle="modal"
+                            [attr.data-target]="'#delete-'+item._id">Inhabilitar</a>
                         </li>
                       </ul>
                     </div>
-                    <div class="modal fade" id="enable-{{item._id}}" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+                    <div class="modal fade" id="enable-{{item._id}}" tabindex="-1" role="dialog" style="display: none;"
+                      aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-card card" data-list="{&quot;valueNames&quot;: [&quot;name&quot;]}">
@@ -102,13 +114,15 @@
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                              <button type="button" class="btn btn-success" (click)="habilitarAdmin(item._id, true)">Habilitar</button>
+                              <button type="button" class="btn btn-success"
+                                (click)="habilitarAdmin(item._id, true)">Habilitar</button>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="modal fade" id="delete-{{item._id}}" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+                    <div class="modal fade" id="delete-{{item._id}}" tabindex="-1" role="dialog" style="display: none;"
+                      aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-card card" data-list="{&quot;valueNames&quot;: [&quot;name&quot;]}">
@@ -125,7 +139,8 @@
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                              <button type="button" class="btn btn-danger" (click)="inhabilitarAdmin(item._id, false)">Inhabilitar</button>
+                              <button type="button" class="btn btn-danger"
+                                (click)="inhabilitarAdmin(item._id, false)">Inhabilitar</button>
                             </div>
                           </div>
                         </div>
@@ -140,8 +155,8 @@
           </div>
 
         </div>
-        <ngb-pagination *ngIf="admins.length >= 1" [(page)]="page" [pageSize]="pageSize" [maxSize]="10"
-          [rotate]="true" [boundaryLinks]="true" [collectionSize]="admins.length"></ngb-pagination>
+        <ngb-pagination *ngIf="admins.length >= 1" [(page)]="page" [pageSize]="pageSize" [maxSize]="10" [rotate]="true"
+          [boundaryLinks]="true" [collectionSize]="admins.length"></ngb-pagination>
 
         <br>
 
