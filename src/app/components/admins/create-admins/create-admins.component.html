@@ -1,1 +1,82 @@
-<p>create-admins works!</p>
+<app-sidebar></app-sidebar>
+
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10 col-xl-8">
+
+        <!-- Header -->
+        <div class="header mt-md-5">
+          <div class="header-body">
+            <div class="row align-items-center">
+              <div class="col">
+                <!-- Title -->
+                <h1 class="header-title">Admins</h1>
+                <div class="ps-page__header">
+                  <ul class="ps-breadcrumb">
+                    <li><a class="breadcrumb-link" [routerLink]="['/admins']">Admins</a></li>
+                    <li class="active"><span>Insertar Admins</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div> <!-- / .row -->
+          </div>
+        </div>
+
+        <!-- Card -->
+        <form #registroForm="ngForm" (ngSubmit)="registro(registroForm)">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-header-title">Registro de un nuevo admin</h4>
+              </div>
+          
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12 col-lg-6">
+                    <div class="form-group">
+                      <label for="nombres">Nombres (*)</label>
+                      <input type="text" class="form-control" required placeholder="Nombres" name="nombres" [(ngModel)]="admin.nombres">
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="form-group">
+                      <label for="apellidos">Apellidos (*)</label>
+                      <input type="text" class="form-control" required placeholder="Apellidos" name="apellidos" [(ngModel)]="admin.apellidos">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="email">Correo electrónico (*)</label>
+                      <input type="email" class="form-control" required placeholder="Correo electrónico" name="email" [(ngModel)]="admin.email"
+                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}">
+                      <div *ngIf="registroForm.submitted && !registroForm.controls.email?.valid" class="text-danger">
+                        El correo electrónico no es válido.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="password">Contraseña (*)</label>
+                      <input type="password" class="form-control" required placeholder="Contraseña" name="password" [(ngModel)]="admin.password"
+                             pattern="^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9]).{8,}$">
+                      <div *ngIf="registroForm.submitted && !registroForm.controls.password?.valid" class="text-danger">
+                        La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, un número y un carácter especial.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="card-footer">
+                <button *ngIf="!load_btn" class="btn btn-primary btn-shadow" type="submit">Crear</button>
+                <button disabled *ngIf="load_btn" type="button" class="btn btn-primary btn-shadow">
+                  <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                  Creando...
+                </button>
+              </div>
+            </div>
+          </form>
+      </div>
+    </div> <!-- / .row -->
+  </div>
+</div>

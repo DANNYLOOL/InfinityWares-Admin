@@ -1,0 +1,43 @@
+.header-title {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  
+  .ps-page__header {
+    padding: 10px 0;
+  }
+  
+  .ps-breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .ps-breadcrumb li {
+    margin-right: 10px;
+  }
+  
+  .ps-breadcrumb li::after {
+    content: '>';
+    margin-left: 10px;
+  }
+  
+  .ps-breadcrumb li:last-child::after {
+    content: '';
+  }
+  
+  .breadcrumb-link {
+    text-decoration: none;
+    color: #007bff; /* Color del enlace */
+    transition: color 0.3s;
+  }
+  
+  .breadcrumb-link:hover {
+    color: #0056b3; /* Color del enlace al pasar el cursor */
+  }
+  
+  .active span {
+    color: #6c757d; /* Color del texto activo */
+  }
+  

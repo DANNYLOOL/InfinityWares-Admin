@@ -42,6 +42,11 @@ export class AdminService {
     return this._http.get(this.url + 'listar_admins_tienda',{headers:headers});
   }
 
+  registro_admin_tienda(data: any, token: any): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
+    return this._http.post(this.url+'registro_admin_tienda',data,{headers:headers});
+  }
+
   get_categorias():Observable<any>{
     return this._http.get('./assets/categorias.json');
   }
