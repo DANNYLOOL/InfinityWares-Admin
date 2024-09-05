@@ -9,11 +9,13 @@ import { VariedadesProductoComponent } from "./components/productos/variedades-p
 import { InventarioProductoComponent } from "./components/productos/inventario-producto/inventario-producto.component";
 import { GaleriaProductoComponent } from "./components/productos/galeria-producto/galeria-producto.component";
 import { AuthGuard } from "../app/guards/auth.guard";
+import { IndexAdminsComponent } from "./components/admins/index-admins/index-admins.component";
 
 const appRoute : Routes = [
     {path: '', redirectTo: 'login', pathMatch : 'full'},
     {path: 'login', component: LoginComponent},
 
+    {path: 'admins', component: IndexAdminsComponent, canActivate:[AuthGuard]},
     {path: 'clientes', component: IndexClientesComponent, canActivate:[AuthGuard]},
 
     {path: 'productos', component: IndexProductoComponent, canActivate:[AuthGuard]},

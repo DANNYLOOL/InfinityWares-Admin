@@ -22,6 +22,11 @@ export class AdminService {
     return this._http.put(this.url + 'actualizar_estado_cliente/' + id, {activo: activo}, {headers: headers});
   }
 
+  actualizar_estado_admin(id: string, activo: boolean, token: any): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
+    return this._http.put(this.url + 'actualizar_estado_admin/' + id, {activo: activo}, {headers: headers});
+  }
+
   login_admin(data:any):Observable<any>{
     let headers = new HttpHeaders().set('Content-Type','application/json');
     return this._http.post(this.url + 'login_admin',data,{headers:headers});
@@ -30,6 +35,11 @@ export class AdminService {
   listar_clientes_tienda(token:any):Observable<any>{
     let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
     return this._http.get(this.url + 'listar_clientes_tienda',{headers:headers});
+  }
+
+  listar_admins_tienda(token:any):Observable<any>{
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
+    return this._http.get(this.url + 'listar_admins_tienda',{headers:headers});
   }
 
   get_categorias():Observable<any>{

@@ -12,10 +12,10 @@
               <div class="col">
 
                 <!-- Title -->
-                <h1 class="header-title">Clientes</h1>
+                <h1 class="header-title">Admins</h1>
                 <div class="ps-page__header">
                   <ul class="ps-breadcrumb">
-                    <li class="active"><span>Clientes</span></li>
+                    <li class="active"><span>Admins</span></li>
                   </ul>
                 </div>
 
@@ -35,16 +35,16 @@
 
             <!-- Title -->
             <h4 class="card-header-title">
-              Mostrando todos tus clientes
+              Mostrando todos los admins
             </h4>
 
           </div>
           <div class="card-body">
             <div class="input-group input-group-merge">
-              <input type="text" class="form-control form-control-appended" placeholder="Buscar cliente" name="filtro"
-                [(ngModel)]="filtro" (keyup.enter)="filtrar_cliente()">
+              <input type="text" class="form-control form-control-appended" placeholder="Buscar admin" name="filtro"
+                [(ngModel)]="filtro" (keyup.enter)="filtrar_admin()">
               <div class="input-group-append">
-                <button class="btn btn-primary" (click)="filtrar_cliente()">
+                <button class="btn btn-primary" (click)="filtrar_admin()">
                   Buscar
                 </button>
               </div>
@@ -54,9 +54,8 @@
             <table class="table table-sm table-nowrap card-table">
               <thead>
                 <tr>
-                  <th>Cliente</th>
+                  <th>Admin</th>
                   <th>Correo</th>
-                  <th>Teléfono</th>
                   <th>Estado</th>
                   <th>Opciones</th>
                 </tr>
@@ -68,10 +67,6 @@
                   </td>
                   <td>
                     {{item.email}}
-                  <td>
-                    <span *ngIf="item.telefono">{{item.telefono}}</span>
-                    <span *ngIf="!item.telefono">No registrado</span>
-                  </td>
                   <td>
                     <span *ngIf="item.activo" class="badge badge-success">Activo</span>
                     <span *ngIf="!item.activo" class="badge badge-danger">Inactivo</span>
@@ -103,11 +98,11 @@
                               </button>
                             </div>
                             <div class="card-body">
-                              <p>¿Desea habilitar el cliente?</p>
+                              <p>¿Desea habilitar el admin?</p>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                              <button type="button" class="btn btn-success" (click)="habilitarCliente(item._id, true)">Habilitar</button>
+                              <button type="button" class="btn btn-success" (click)="habilitarAdmin(item._id, true)">Habilitar</button>
                             </div>
                           </div>
                         </div>
@@ -126,11 +121,11 @@
                               </button>
                             </div>
                             <div class="card-body">
-                              <p>¿Desea inhabilitar el cliente?</p>
+                              <p>¿Desea inhabilitar el admin?</p>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                              <button type="button" class="btn btn-danger" (click)="inhabilitarCliente(item._id, false)">Inhabilitar</button>
+                              <button type="button" class="btn btn-danger" (click)="inhabilitarAdmin(item._id, false)">Inhabilitar</button>
                             </div>
                           </div>
                         </div>

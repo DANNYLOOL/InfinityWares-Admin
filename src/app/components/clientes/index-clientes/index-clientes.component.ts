@@ -50,10 +50,9 @@ export class IndexClientesComponent implements OnInit {
         position: 'topRight',
         message: 'No se pudo actualizar el estado del cliente.'
       });
-      return; // Salir del método si el estado ya está false
+      return;
     }
   
-    // Si el estado es true, intentar actualizarlo
     this._adminService.actualizar_estado_cliente(id, estado, this.token).subscribe(
       response => {
         iziToast.show({
@@ -90,10 +89,9 @@ export class IndexClientesComponent implements OnInit {
         position: 'topRight',
         message: 'No se pudo actualizar el estado del cliente.'
       });
-      return; // Salir del método si el estado ya está false
+      return;
     }
   
-    // Si el estado es true, intentar actualizarlo
     this._adminService.actualizar_estado_cliente(id, estado, this.token).subscribe(
       response => {
         iziToast.show({

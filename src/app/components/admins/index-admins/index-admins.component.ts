@@ -21,7 +21,7 @@ export class IndexAdminsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this._adminService.listar_clientes_tienda(this.token).subscribe(
+    this._adminService.listar_admins_tienda(this.token).subscribe(
       response=>{
         console.log(response);
         
@@ -31,16 +31,16 @@ export class IndexAdminsComponent implements OnInit {
     );
   }
 
-  filtrar_cliente(){
+  filtrar_admin(){
     if(this.filtro){
       var term = new RegExp(this.filtro.toString().trim() , 'i');
-      this.admins = this.admins_const.filter(item=>term.test(item.nombres)||term.test(item.apellidos)||term.test(item.email)||term.test(item.dni)||term.test(item.telefono)||term.test(item._id));
+      this.admins = this.admins_const.filter(item=>term.test(item.nombres)||term.test(item.apellidos)||term.test(item.email)||term.test(item._id));
     }else{
       this.admins = this.admins_const;
     }
   }
 
-  inhabilitarCliente(id: string, estado: boolean) {
+  inhabilitarAdmin(id: string, estado: boolean) {
     if (estado) {
       iziToast.show({
         title: 'ERROR',
@@ -48,13 +48,12 @@ export class IndexAdminsComponent implements OnInit {
         color: '#FFF',
         class: 'text-danger',
         position: 'topRight',
-        message: 'No se pudo actualizar el estado del cliente.'
+        message: 'No se pudo actualizar el estado del admin.'
       });
-      return; // Salir del método si el estado ya está false
+      return;
     }
   
-    // Si el estado es true, intentar actualizarlo
-    this._adminService.actualizar_estado_cliente(id, estado, this.token).subscribe(
+    this._adminService.actualizar_estado_admin(id, estado, this.token).subscribe(
       response => {
         iziToast.show({
           title: 'SUCCESS',
@@ -62,7 +61,7 @@ export class IndexAdminsComponent implements OnInit {
           color: '#FFF',
           class: 'text-success',
           position: 'topRight',
-          message: 'Estado del cliente actualizado correctamente.'
+          message: 'Estado del admin actualizado correctamente.'
         });
         this.ngOnInit();
         $('#delete-' + id).modal('hide');
@@ -80,7 +79,7 @@ export class IndexAdminsComponent implements OnInit {
     );
   }
 
-  habilitarCliente(id: string, estado: boolean) {
+  habilitarAdmin(id: string, estado: boolean) {
     if (!estado) {
       iziToast.show({
         title: 'ERROR',
@@ -88,13 +87,12 @@ export class IndexAdminsComponent implements OnInit {
         color: '#FFF',
         class: 'text-danger',
         position: 'topRight',
-        message: 'No se pudo actualizar el estado del cliente.'
+        message: 'No se pudo actualizar el estado del admin.'
       });
-      return; // Salir del método si el estado ya está false
+      return;
     }
   
-    // Si el estado es true, intentar actualizarlo
-    this._adminService.actualizar_estado_cliente(id, estado, this.token).subscribe(
+    this._adminService.actualizar_estado_admin(id, estado, this.token).subscribe(
       response => {
         iziToast.show({
           title: 'SUCCESS',
